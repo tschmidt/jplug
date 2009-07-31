@@ -1,0 +1,7 @@
+= jplug
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Terry Schmidt. See LICENSE for details.
