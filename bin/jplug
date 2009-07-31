@@ -1,0 +1,68 @@
+#!/usr/bin/ruby
+$:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'rubygems'
+require 'oyster'
+require 'jquery'
+
+spec = Oyster.spec do
+  name "jplug -- jQuery Plugin generator"
+  
+  synopsis <<-SYNOPSIS
+    jplug [options] <plugin_name>
+    jplug [options] <PluginName>
+  SYNOPSIS
+  
+  description <<-DESCRIPTION
+    jPlug is a command-line tool that allows you to quickly mock out jQuery
+    Plugins. This will include the latest version of jQuery along with a few
+    other popular plugins right out of the box.
+  DESCRIPTION
+  
+  flag  :author_name, :default => JPLUG_DEFAULTS['author-name'] || nil,
+        :desc => 'The author name for this new plugin.'
+  
+  flag  :extras, :default => JPLUG_DEFAULTS['extras'] || true,
+        :desc => 'Include additional jQuery Plugins'
+  
+  notes <<-NOTES
+    If you find that you are constantly specifying the same options each time
+    you can create a .jplugrc file in your home directory with the defaults that
+    you would like to have set every time. This file should be in the following format.
+    
+    author-name : Terry Schmidt
+    extras : false
+  NOTES
+  
+  author 'Terry Schmidt'
+  
+  copyright <<-COPYRIGHT
+    Copyright (c) 2009 Terry Schmidt
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+    LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  COPYRIGHT
+end
+
+begin
+  opts = spec.parse
+rescue Oyster::HelpRendered
+  exit
+end
+
+JQuery.new(opts)
