@@ -4,12 +4,20 @@ require 'rubygems'
 require 'oyster'
 require 'jquery'
 
+if File.exists?(File.join(ENV['HOME'], '.jplugrc'))
+  JPLUG_DEFAULTS = YAML.load_file(File.join(ENV['HOME'], '.jplugrc'))
+else
+  JPLUG_DEFAULTS = {}
+end
+
 spec = Oyster.spec do
   name "jplug -- jQuery Plugin generator"
   
   synopsis <<-SYNOPSIS
     jplug [options] <plugin_name>
     jplug [options] <PluginName>
+    
+    * Plugin Name is required
   SYNOPSIS
   
   description <<-DESCRIPTION
@@ -18,11 +26,14 @@ spec = Oyster.spec do
     other popular plugins right out of the box.
   DESCRIPTION
   
-  flag  :author_name, :default => JPLUG_DEFAULTS['author-name'] || nil,
-        :desc => 'The author name for this new plugin.'
+  string  :author_name, :default => (JPLUG_DEFAULTS['author-name'] rescue nil),
+          :desc => 'The author name for this new plugin.'
   
-  flag  :extras, :default => JPLUG_DEFAULTS['extras'] || true,
-        :desc => 'Include additional jQuery Plugins'
+  flag    :extras, :default => (JPLUG_DEFAULTS['extras'] rescue true),
+          :desc => 'Include additional jQuery Plugins'
+          
+  string  :dest, :default => (JPLUG_DEFAULTS['dest'] rescue Dir.pwd),
+          :desc => 'Specify the install directory. Default is the current directory.'
   
   notes <<-NOTES
     If you find that you are constantly specifying the same options each time
@@ -61,6 +72,7 @@ end
 
 begin
   opts = spec.parse
+  spec.parse %w(--help) if opts[:unclaimed].empty?
 rescue Oyster::HelpRendered
   exit
 end
