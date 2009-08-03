@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jplug}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Terry Schmidt"]
-  s.date = %q{2009-07-31}
+  s.date = %q{2009-08-03}
   s.default_executable = %q{jplug}
   s.email = %q{tschmidt@ext-inc.com}
   s.executables = ["jplug"]
@@ -22,9 +22,20 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/jplug",
+     "ekko/html/index.html",
+     "ekko/html/stylesheets/application.css",
+     "ekko/html/stylesheets/base.css",
+     "ekko/html/stylesheets/gridz.css",
+     "ekko/html/stylesheets/reset.css",
+     "ekko/html/stylesheets/skin.css",
+     "ekko/lib/jquery.ekko.js",
+     "jplug.gemspec",
      "lib/jquery.rb",
-     "lib/jquery/options.rb",
-     "lib/jquery/plugin.rb",
+     "lib/jquery/fillers.rb",
+     "lib/templates/application.css",
+     "lib/templates/base.css",
+     "lib/templates/gridz.css",
+     "lib/templates/reset.css",
      "test/jplug_test.rb",
      "test/test_helper.rb"
   ]
