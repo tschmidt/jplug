@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jplug}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Terry Schmidt"]
@@ -22,13 +22,6 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/jplug",
-     "ekko/html/index.html",
-     "ekko/html/stylesheets/application.css",
-     "ekko/html/stylesheets/base.css",
-     "ekko/html/stylesheets/gridz.css",
-     "ekko/html/stylesheets/reset.css",
-     "ekko/html/stylesheets/skin.css",
-     "ekko/lib/jquery.ekko.js",
      "jplug.gemspec",
      "lib/jquery.rb",
      "lib/jquery/fillers.rb",
