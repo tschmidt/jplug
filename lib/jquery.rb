@@ -26,6 +26,7 @@ class JQuery
     template 'reset.css', "/html/stylesheets/reset.css"
     template 'base.css', "/html/stylesheets/base.css"
     template 'gridz.css', "/html/stylesheets/gridz.css"
+    template 'jquery-1.3.2.js', "/html/javascripts/jquery-1.3.2.js"
     
     file '/html/stylesheets/skin.css', :skin_filler
     file '/html/index.html', :index_filler

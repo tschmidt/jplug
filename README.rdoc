@@ -14,6 +14,24 @@ Once the gem has been installed you can type the following at the command line
 
   jplug <plugin_name>
   
+This will create a new project with the following file structure:
+
+  <plugin_name>/
+  <plugin_name>/html
+  <plugin_name>/html/index.html
+  <plugin_name>/html/stylesheets
+  <plugin_name>/html/stylesheets/application.css
+  <plugin_name>/html/stylesheets/reset.css
+  <plugin_name>/html/stylesheets/base.css
+  <plugin_name>/html/stylesheets/gridz.css
+  <plugin_name>/html/stylesheets/skin.css
+  <plugin_name>/html/javascripts/jquery-1.3.2.js
+  <plugin_name>/lib
+  <plugin_name>/lib/jquery.<plugin_name>.js
+
+You should only need to modify the <tt>index.html</tt>, <tt>skin.css</tt>, and
+<tt>lib/jquery.<plugin_name>.js</tt>files.
+  
 == Options
 
 There are several options that can be set for jPlug. These include:
