@@ -1,6 +1,38 @@
-= jplug
+= jPlug
 
-Description goes here.
+jPlug is a jQuery Plugin generator that is based on a template that I have been
+using for a while now. It will generate a "shell" that has the file structure and
+default styling that I like to use.
+
+== Usage
+
+To use this generator you must first install the gem
+
+  sudo gem install tschmidt-jplug
+
+Once the gem has been installed you can type the following at the command line
+
+  jplug <plugin_name>
+  
+== Options
+
+There are several options that can be set for jPlug. These include:
+
+* author-name - Specify the author for this project.
+* extras - Installs other useful jquery plugins.
+* dest - Specify the default install directory. This will default to the current directory.
+
+If you find that you are setting the same defaults each time you can create a .jplugrc
+file in your home path. The format will be as follows:
+
+  author-name: Terry Schmidt
+  extras: false
+  dest: /path/to/install/directory
+
+== Examples
+
+  jplug -a "Terry Schmidt" MyAwesomePlugin
+  jplug -a "Terry Schmdit" -d /Users/tschmidt/jq_plugins my_awesome_plugin
 
 == Copyright
 

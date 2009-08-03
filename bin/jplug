@@ -40,8 +40,8 @@ spec = Oyster.spec do
     you can create a .jplugrc file in your home directory with the defaults that
     you would like to have set every time. This file should be in the following format.
     
-    author-name : Terry Schmidt
-    extras : false
+    author-name: Terry Schmidt
+    extras: false
   NOTES
   
   author 'Terry Schmidt'
