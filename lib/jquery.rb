@@ -13,7 +13,6 @@ class JQuery
       tr('-', '_').
       downcase
     @install_dir = File.join(opts[:dest], @project_name)
-    puts '', '=' * 75, opts.inspect
     manifest
   end
   
