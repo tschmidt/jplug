@@ -28,6 +28,13 @@ class JQuery
     template 'gridz.css', "/html/stylesheets/gridz.css"
     template 'jquery-1.3.2.js', "/html/javascripts/jquery-1.3.2.js"
     
+    if extras
+      template 'jquery.easing-1.3.js', '/html/javascripts/jquery.easing-1.3.js'
+      template 'jquery.form-2.28.js', '/html/javascripts/jquery.form-2.28.js'
+      template 'jquery.ekko-0.1.js', '/html/javascripts/jquery.ekko-0.1.js'
+    end
+      
+    
     file '/html/stylesheets/skin.css', :skin_filler
     file '/html/index.html', :index_filler
     file "/lib/jquery.#{project_name}.js", :js_filler

@@ -85,7 +85,7 @@ th {
   end
   
   def index_filler
-    <<-INDEX
+    str <<-INDEX
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -96,7 +96,17 @@ th {
 
 		<link rel="stylesheet" href="stylesheets/application.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script src="javascripts/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
-		<script src="javascripts/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+    INDEX
+    
+    if extras
+      str <<-EXTRAS
+    <script src="javascripts/jquery.easing-1.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/jquery.form-2.28.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/jquery.ekko-0.1.js" type="text/javascript" charset="utf-8"></script>
+		  EXTRAS
+	  end
+	  
+	  str <<-INDEX
 		<script src="../lib/jquery.#{project_name}.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
@@ -116,6 +126,7 @@ th {
 	</body>
 </html>
     INDEX
+    str
   end
   
   def js_filler
